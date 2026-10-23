@@ -14,25 +14,19 @@ const LIMITE_ALCANCE := 8
 @export var alcance := 1
 @export var max_bombas := 1
 
+@onready var nivel: Nivel = get_parent()
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var forma: CollisionShape2D = $CollisionShape2D
+@onready var _prefijo := "j%d_" % id_jugador
 
 var vivo := true
 var _congelado := false
 var _bombas_activas := 0
-var _prefijo := ""
 
 
 func _ready() -> void:
-	motion_mode = MOTION_MODE_FLOATING
-	add_to_group("jugadores")
-	_prefijo = "j%d_" % id_jugador
-
 	if id_jugador == 2:
 		modulate = COLOR_J2
-
-	sprite.play("abajo")
-	sprite.stop()
 
 
 func _physics_process(delta: float) -> void:
@@ -50,7 +44,6 @@ func _alinear_al_carril(direccion: Vector2, delta: float) -> void:
 	if direccion == Vector2.ZERO:
 		return
 
-	var nivel := get_parent() as Nivel
 	var centro := nivel.casilla_a_posicion(nivel.posicion_a_casilla(position))
 	var paso := velocidad * delta
 
@@ -64,7 +57,6 @@ func _poner_bomba() -> void:
 	if _bombas_activas >= max_bombas:
 		return
 
-	var nivel := get_parent() as Nivel
 	var casilla := nivel.posicion_a_casilla(nivel.to_local(forma.global_position))
 	if nivel.hay_bomba(casilla):
 		return

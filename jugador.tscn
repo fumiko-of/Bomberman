@@ -108,15 +108,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikrs5"]
 size = Vector2(40, 40)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=374861652]
+[node name="Jugador" type="CharacterBody2D" unique_id=374861652 groups=["jugadores"]]
 y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_omvyu")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=229746301]
 position = Vector2(3.0000002, 1)
 scale = Vector2(0.35819674, 0.33529413)
 sprite_frames = SubResource("SpriteFrames_ve0sw")
-animation = &"lado"
+animation = &"abajo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1321968265]
 shape = SubResource("RectangleShape2D_ikrs5")
