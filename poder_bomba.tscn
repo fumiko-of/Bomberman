@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://xxe1rvodc6wn"]
+
+[ext_resource type="Script" uid="uid://cfj5b0a1k7fsh" path="res://power_up.gd" id="1_c8dm5"]
+[ext_resource type="Texture2D" uid="uid://dwef8f82audn5" path="res://assests/poder_bomba.png" id="2_4375k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxa2c"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_4375k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_b3ets"]
+resource_name = "flotar"
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, 4), Vector2(0, -4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxybn"]
+_data = {
+&"RESET": SubResource("Animation_4375k"),
+&"flotar": SubResource("Animation_b3ets")
+}
+
+[node name="poder_bomba" type="Area2D" unique_id=2049719257]
+collision_layer = 0
+script = ExtResource("1_c8dm5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495310583]
+shape = SubResource("RectangleShape2D_uxa2c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=179225850]
+position = Vector2(0, -4)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_4375k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174045332]
+libraries/ = SubResource("AnimationLibrary_jxybn")
+autoplay = &"flotar"
