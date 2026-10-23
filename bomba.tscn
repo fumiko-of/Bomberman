@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bgve4bq356i2i"]
+
+[ext_resource type="Script" uid="uid://gmuys15447je" path="res://bomba.gd" id="1_ncxna"]
+[ext_resource type="Texture2D" uid="uid://ig5hv4wo4pkv" path="res://assests/bombas.png" id="2_7fjjm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apik8"]
+atlas = ExtResource("2_7fjjm")
+region = Rect2(0, 0, 222, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w0r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apik8")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxa2c"]
+size = Vector2(48, 48)
+
+[node name="bomba" type="Node2D" unique_id=422355951 groups=["bombas"]]
+script = ExtResource("1_ncxna")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=473871108]
+position = Vector2(-2.9802322e-08, 4.7683716e-07)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_8w0r3")
+frame_progress = 0.022096263
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1113727641]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=102773263]
+shape = SubResource("RectangleShape2D_uxa2c")
+
+[node name="Timer" type="Timer" parent="." unique_id=782291403]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_explotar"]

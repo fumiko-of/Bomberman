@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://k6kemle4pd6x"]
+
+[ext_resource type="Script" uid="uid://chqq60s2db8no" path="res://caja_dura.gd" id="1_xaggt"]
+[ext_resource type="Texture2D" uid="uid://c8fvofllexyvl" path="res://Cajas.png" id="2_xaggt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikrs5"]
+size = Vector2(48, 50)
+
+[node name="CajaDura" type="StaticBody2D" unique_id=300269068 groups=["duras"]]
+script = ExtResource("1_xaggt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=281894679]
+scale = Vector2(0.19834709, 0.21238938)
+texture = ExtResource("2_xaggt")
+region_enabled = true
+region_rect = Rect2(654, 371, 242, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=508938193]
+shape = SubResource("RectangleShape2D_ikrs5")

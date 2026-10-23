@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://r5c43yam8pug"]
+
+[ext_resource type="Script" uid="uid://c028aqxoc1r4k" path="res://nivel.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bp0fqofklwsdc" path="res://caja_blanda.tscn" id="2_7gdj4"]
+[ext_resource type="PackedScene" uid="uid://k6kemle4pd6x" path="res://caja_dura.tscn" id="3_j87l1"]
+[ext_resource type="PackedScene" uid="uid://dp15uxtrp7plt" path="res://jugador.tscn" id="4_j87l1"]
+[ext_resource type="Script" uid="uid://ch5jaobg62oa4" path="res://hub.gd" id="5_ymy7k"]
+
+[node name="Nivel" type="Node2D" unique_id=2004823487]
+y_sort_enabled = true
+script = ExtResource("1_ig7tw")
+escena_dura = ExtResource("3_j87l1")
+escena_blanda = ExtResource("2_7gdj4")
+escena_jugador = ExtResource("4_j87l1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=922081350]
+
+[node name="HUB" type="CanvasLayer" parent="." unique_id=1311836688]
+script = ExtResource("5_ymy7k")
