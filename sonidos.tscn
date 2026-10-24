@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckktma8x0ba87"]
+
+[ext_resource type="Script" uid="uid://cq1skur5e51r2" path="res://sonidos.gd" id="1_fjulc"]
+[ext_resource type="AudioStream" uid="uid://yhmgfxe2vu77" path="res://assests/sonido_bomba.wav" id="2_elu5q"]
+[ext_resource type="AudioStream" uid="uid://dqnr5nog2i7jk" path="res://assests/sonido_explosion.wav" id="3_iakfj"]
+[ext_resource type="AudioStream" uid="uid://c34d4l7fxutr1" path="res://assests/sonido_poder.wav" id="4_qkhiv"]
+
+[node name="Sonidos" type="Node2D" unique_id=1061185279]
+script = ExtResource("1_fjulc")
+
+[node name="PonerBomba" type="AudioStreamPlayer2D" parent="." unique_id=1471327911]
+stream = ExtResource("2_elu5q")
+max_polyphony = 4
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="." unique_id=1135948716]
+stream = ExtResource("3_iakfj")
+volume_db = -4.0
+max_polyphony = 4
+
+[node name="Poder" type="AudioStreamPlayer2D" parent="." unique_id=1960840355]
+stream = ExtResource("4_qkhiv")
+max_polyphony = 4

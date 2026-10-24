@@ -35,7 +35,7 @@ func _explotar() -> void:
 	_explotando = true
 	set_physics_process(false)
 	exploto.emit()
-	Sonidos.reproducir(self, Sonidos.EXPLOSION, -4.0)
+	Sonidos.explosion()
 
 	var posiciones: Array[Vector2] = [global_position]
 	var partes: Array[Vector2] = [CENTRO]

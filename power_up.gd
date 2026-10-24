@@ -14,7 +14,7 @@ func _al_tocar(cuerpo: Node2D) -> void:
 		return
 
 	_recogido = true
-	Sonidos.reproducir(self, Sonidos.PODER)
+	Sonidos.poder()
 
 	if tipo == Tipo.BOMBA_EXTRA:
 		jugador.aumentar_bombas()

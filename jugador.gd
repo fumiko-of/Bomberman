@@ -68,7 +68,7 @@ func _poner_bomba() -> void:
 
 	_bombas_activas += 1
 	bomba.exploto.connect(_al_terminar_bomba)
-	Sonidos.reproducir(self, Sonidos.PONER_BOMBA)
+	Sonidos.poner_bomba()
 
 
 func _al_terminar_bomba() -> void:
