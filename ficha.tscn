@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bg1c7pkvtkek8"]
+
+[ext_resource type="Script" uid="uid://cnh8o8cl7is0m" path="res://ficha.gd" id="1_20lwp"]
+[ext_resource type="Texture2D" uid="uid://dwef8f82audn5" path="res://assests/poder_bomba.png" id="2_eesfy"]
+[ext_resource type="Texture2D" uid="uid://c6vi5fs8cm300" path="res://assests/poder_alcance.png" id="3_1jsyo"]
+
+[node name="Ficha" type="HBoxContainer" unique_id=298358603]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_20lwp")
+
+[node name="Nombre" type="Label" parent="." unique_id=1275834680]
+layout_mode = 2
+text = "J1"
+
+[node name="IconoBomba" type="TextureRect" parent="." unique_id=197794907]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("2_eesfy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bombas" type="Label" parent="." unique_id=282093472]
+layout_mode = 2
+text = "1"
+
+[node name="IconoAlcance" type="TextureRect" parent="." unique_id=1269155546]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("3_1jsyo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Alcance" type="Label" parent="." unique_id=654089129]
+layout_mode = 2
+text = "1"
